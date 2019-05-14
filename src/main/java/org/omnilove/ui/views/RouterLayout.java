@@ -30,9 +30,9 @@ public class RouterLayout extends AppLayoutRouterLayout {
 		notifications = new DefaultNotificationHolder(newStatus -> {
 		});
 		badge = new DefaultBadgeHolder(5);
-		for (int i = 1; i < 6; i++) {
-			notifications.addNotification(new DefaultNotification("Test title" + i, "A rather long test description ..............." + i));
-		}
+//		for (int i = 1; i < 6; i++) {
+//			notifications.addNotification(new DefaultNotification("Test title" + i, "A rather long test description ..............." + i));
+//		}
 		LeftNavigationItem menuEntry = new LeftNavigationItem("Menu", VaadinIcon.MENU.create(), Main.class);
 		badge.bind(menuEntry.getBadge());
 		init(AppLayoutBuilder
@@ -45,12 +45,9 @@ public class RouterLayout extends AppLayoutRouterLayout {
 				.withAppMenu(LeftAppMenuBuilder.get()
 						.add(new LeftNavigationItem("Home", VaadinIcon.HOME.create(), Main.class))
 						.add(LeftSubMenuBuilder.get("My Submenu", VaadinIcon.PLUS.create())
-								.add(LeftSubMenuBuilder.get("My Submenu", VaadinIcon.PLUS.create())
-										.build())
-
 								.build())
 						.add(menuEntry)
-						.addToSection(new LeftClickableItem("Clickable Entry", VaadinIcon.COG.create(), clickEvent -> Notification.show("onClick ...")), FOOTER)
+						.addToSection(new LeftClickableItem("Projects", VaadinIcon.BOMB.create(), clickEvent -> Notification.show("This will show projects page")), FOOTER)
 						.build())
 				.build());
 	}

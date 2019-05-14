@@ -1,4 +1,4 @@
-package org.omnilove.service.dto;
+package org.omnilove.ui.dto;
 
 import lombok.Data;
 
@@ -9,9 +9,10 @@ import java.util.List;
 public class User {
 	private Long id;
 	private String username;
-	private String name;
+	private String surname;
 	private String firstname;
 	private String email;
+	private String password;
 	private Date birthday;
 	private List<Project> projects;
 	private String motivation;

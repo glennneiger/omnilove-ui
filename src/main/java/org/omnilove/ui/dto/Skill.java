@@ -1,4 +1,4 @@
-package org.omnilove.service.dto;
+package org.omnilove.ui.dto;
 
 import lombok.Data;
 
