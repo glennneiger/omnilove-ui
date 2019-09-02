@@ -1,5 +1,6 @@
 package org.omnilove.ui.views;
 
+import com.vaadin.flow.router.RouterLink;
 import org.omnilove.ui.views.Main;
 import com.github.appreciated.app.layout.behaviour.Behaviour;
 import com.github.appreciated.app.layout.builder.AppLayoutBuilder;
@@ -38,16 +39,14 @@ public class RouterLayout extends AppLayoutRouterLayout {
 		init(AppLayoutBuilder
 				.get(Behaviour.LEFT_RESPONSIVE_HYBRID)
 				.withTitle("omnilove")
-				.withIcon(VaadinIcon.HEART.name())
+				.withIcon("/logo.png")
 				.withAppBar(AppBarBuilder.get()
 						.add(new AppBarNotificationButton<>(VaadinIcon.BELL, notifications))
 						.build())
 				.withAppMenu(LeftAppMenuBuilder.get()
-						.add(new LeftNavigationItem("Home", VaadinIcon.HOME.create(), Main.class))
-						.add(LeftSubMenuBuilder.get("My Submenu", VaadinIcon.PLUS.create())
-								.build())
-						.add(menuEntry)
-						.addToSection(new LeftClickableItem("Projects", VaadinIcon.BOMB.create(), clickEvent -> Notification.show("This will show projects page")), FOOTER)
+						.add(new LeftNavigationItem("Create New", VaadinIcon.PLUS.create(), CreateProject.class))
+						.add(new LeftNavigationItem("Projects", VaadinIcon.BOMB.create(), Projects.class))
+						.add(new LeftNavigationItem("Profile", VaadinIcon.WRENCH.create(), Profile.class))
 						.build())
 				.build());
 	}

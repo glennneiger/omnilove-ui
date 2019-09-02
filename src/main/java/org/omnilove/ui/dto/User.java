@@ -2,7 +2,7 @@ package org.omnilove.ui.dto;
 
 import lombok.Data;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 @Data
@@ -13,7 +13,7 @@ public class User {
 	private String firstname;
 	private String email;
 	private String password;
-	private Date birthday;
+	private LocalDate birthday;
 	private List<Project> projects;
 	private String motivation;
 	private List<Skill> skills;
